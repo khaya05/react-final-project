@@ -59,7 +59,7 @@ const Navbar = () => {
           className='flex relative'
           onClick={() => dispatch(toggleCart())}
         >
-          <img src='/assets/cart.svg' alt='cart-icon' className='h-full w-8' />
+          <img src='../../assets/cart.svg' alt='cart-icon' className='h-full w-8' />
           <p className='absolute bottom-4 left-6 bg-white rounded-full w-6 h-6 text-center text-green-500 font-bold'>
             {cartItems.length}
           </p>

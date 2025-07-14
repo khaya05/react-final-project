@@ -6,7 +6,7 @@ function CartItem({ id, name, price, qty, img }) {
   const dispatch = useDispatch();
 
   const handleDecreaseQuantity = (id) => {
-    dispatch(toggleAddToCartBtn());
+    dispatch(toggleAddToCartBtn(id));
     dispatch(decreaseQuantity(id));
   };
 
