@@ -1,9 +1,14 @@
-import { useDispatch } from 'react-redux';
+import { useDispatch} from 'react-redux';
 import { decreaseQuantity, increaseQuantity } from '../store/cartSlice';
 import { toggleAddToCartBtn } from '../store/uiSlice';
 
 function CartItem({ id, name, price, qty, img }) {
   const dispatch = useDispatch();
+
+  const handleDecreaseQuantity = (id) => {
+    dispatch(toggleAddToCartBtn());
+    dispatch(decreaseQuantity(id));
+  };
 
   return (
     <div className='flex items-center justify-between mb-4'>
@@ -21,10 +26,7 @@ function CartItem({ id, name, price, qty, img }) {
 
       <div className='flex items-center bg-gray-100 px-2 rounded-md'>
         <button
-          onClick={() => {
-            dispatch(toggleAddToCartBtn(id));
-            dispatch(decreaseQuantity(id));
-          }}
+          onClick={() => handleDecreaseQuantity(id)}
           className='text-lg px-2 text-gray-500 hover:text-black'
         >
           –
